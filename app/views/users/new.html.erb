@@ -1,8 +1,8 @@
 <div class="wrap-login100">
-  <%= form_with url: sessions_path, class: "login100-signup-form validate-form" do |f| %>
+  <%= form_with model: @user, class: "login100-signup-form validate-form" do |f| %>
     
     <% flash.each do |type,msg| %>
-      <div class="alert alert-danger">
+      <div class="alert alert-danger alert-dismissible">
         <%= msg %>
       </div>
     <% end %>
@@ -16,7 +16,7 @@
     </div>
 
      <div class="wrap-input100 validate-input" data-validate="Password is required">
-      <input class="input100" type="text" name="first_name" placeholder="Last name">
+      <input class="input100" type="text" name="last_name" placeholder="Last name">
      </div>
 
       <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -45,7 +45,7 @@
 
 
     <div class="container-login100-form-btn">
-       <%= f.submit :Login,class: "login100-form-btn"%>
+       <%= f.submit "Create Account",class: "login100-form-btn"%>
     </div>
     
     <div class="text-center p-t-46 p-b-20">

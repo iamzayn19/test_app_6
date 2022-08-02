@@ -2,7 +2,7 @@
   <%= form_with url: sessions_path, class: "login100-form validate-form" do |f| %>
     
     <% flash.each do |type,msg| %>
-      <div class="alert alert-danger">
+      <div class="alert alert-danger alert-dismissible">
         <%= msg %>
       </div>
     <% end %>
@@ -43,7 +43,7 @@
     
     <div class="text-center p-t-46 p-b-20">
       <span class="txt2">
-        or <%= link_to 'Sign Up', registration_path %>
+        or <%= link_to 'Sign Up', new_user_path %>
       </span>
     </div>
 
