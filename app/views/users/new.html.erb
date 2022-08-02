@@ -1,5 +1,5 @@
-<div  id="signup-form">
-  <%= form_with url: sessions_path, class: "login100-form validate-form" do |f| %>
+<div class="wrap-login100">
+  <%= form_with url: sessions_path, class: "login100-signup-form validate-form" do |f| %>
     
     <% flash.each do |type,msg| %>
       <div class="alert alert-danger">
