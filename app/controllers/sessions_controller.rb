@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       redirect_to request.referrer
     else
       session[:current_user] = @user.first
-      redirect_to users_path
+      redirect_to user_path(@user)
    end
   end
   

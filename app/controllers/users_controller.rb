@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user, only: [:index]
   def index
-    @user = User.find_by(id: session[:current_user]["id"])
   end
   
   def new
@@ -14,13 +13,13 @@ class UsersController < ApplicationController
       flash[:success] = "Account created successfully!"
       redirect_to root_path 
     else 
-      flash[:alert] = "Please fill the form again."
       render :new
     end 
     
   end 
   
   def show
+    @user = User.find_by(id: session[:current_user]["id"])
   end
 
   private
