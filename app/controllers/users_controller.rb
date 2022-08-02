@@ -9,6 +9,14 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.create(user_params)
+    if @user.save
+      flash[:success] = "Account created successfully!"
+      redirect_to root_path 
+    else 
+      flash[:alert] = "Please fill the form again."
+      render :new
+    end 
     
   end 
   
@@ -16,6 +24,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def user_params
+    params.require(:user).permit(:first_name,:last_name,:email,:password)
+  end 
 
   def authenticate_user
     if session[:current_user]== nil

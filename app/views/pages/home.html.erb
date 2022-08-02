@@ -2,9 +2,15 @@
   <%= form_with url: sessions_path, class: "login100-form validate-form" do |f| %>
     
     <% flash.each do |type,msg| %>
-      <div class="alert alert-danger alert-dismissible">
-        <%= msg %>
-      </div>
+      <% if type == "success" %>
+        <div class="alert alert-success alert-dismissible">
+          <%= msg %>
+        </div>
+      <% else %>
+        <div class="alert alert-danger alert-dismissible">
+          <%= msg %>
+        </div>
+      <% end %>
     <% end %>
 
     <span class="login100-form-title p-b-43">
