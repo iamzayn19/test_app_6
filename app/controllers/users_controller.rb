@@ -3,6 +3,12 @@ class UsersController < ApplicationController
   end 
   
   def sign_in
-    render :json => params
+    @user = User.authenticated(params[:email],params[:pass])
+    if @user.empty?
+      flash[:alert] = "Invalid email or password"
+      redirect_to request.referrer
+    else  
+      render :index
+   end
   end 
 end 

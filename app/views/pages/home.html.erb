@@ -1,5 +1,12 @@
 <div class="wrap-login100">
   <%= form_with url: sign_in_path, class: "login100-form validate-form" do |f| %>
+    
+    <% flash.each do |type,msg| %>
+      <div class="alert alert-danger">
+        <%= msg %>
+      </div>
+    <% end %>
+
     <span class="login100-form-title p-b-43">
         Login to continue
       </span>
