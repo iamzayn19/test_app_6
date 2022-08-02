@@ -1,23 +1,17 @@
 <div class="wrap-login100">
-  <%= form_with url: sign_in_path do |f| %>
-  <%= f.submit %>
-  <% end %>
-  <form class="login100-form validate-form">
+  <%= form_with url: sign_in_path, class: "login100-form validate-form" do |f| %>
     <span class="login100-form-title p-b-43">
-      Login to continue
-    </span>
-    
-    
-    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+        Login to continue
+      </span>
+
+      <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
       <input class="input100" type="text" placeholder="Email" name="email">
-      <span class="focus-input100"></span>
+    
     </div>
     
     
     <div class="wrap-input100 validate-input" data-validate="Password is required">
-      <input class="input100" type="password" name="pass">
-      <span class="focus-input100"></span>
-      <span class="label-input100">Password</span>
+      <input class="input100" type="password" name="pass" placeholder="Password">
     </div>
 
     <div class="flex-sb-m w-full p-t-3 p-b-32">
@@ -37,9 +31,7 @@
 
 
     <div class="container-login100-form-btn">
-      <button class="login100-form-btn">
-        Login
-      </button>
+       <%= f.submit :Login,class: "login100-form-btn"%>
     </div>
     
     <div class="text-center p-t-46 p-b-20">
@@ -48,8 +40,7 @@
       </span>
     </div>
 
-    
-  </form>
+  <% end %>
 
   <%= image_tag ("bg-01.jpg"), class: "login100-more" %>
 </div>
