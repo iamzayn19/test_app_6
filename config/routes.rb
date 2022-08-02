@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-  resources :articles
+  
   #root 'articles#index'
   root 'pages#home'
+  get 'home', to: 'pages#home'
   get 'about', to: 'pages#about'
   get 'sign_up', to: 'users#new', as: :registration
-  post 'sign_in', to: 'users#sign_in'
+
+  resources :sessions
+  resources :users
+  resources :articles 
+    
 end

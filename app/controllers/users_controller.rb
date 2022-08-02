@@ -1,14 +1,22 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user, only: [:index]
   def index
-  end 
+    @user = User.find_by(id: session[:current_user]["id"])
+  end
   
-  def sign_in
-    @user = User.authenticated(params[:email],params[:pass])
-    if @user.empty?
-      flash[:alert] = "Invalid email or password"
-      redirect_to request.referrer
-    else  
-      render :index
-   end
+  def new
+  end
+  
+  def show
+  end
+
+  private
+
+  def authenticate_user
+    if session[:current_user]== nil
+      flash[:alert] = "Please login first!"
+      redirect_to root_path
+    end 
   end 
+
 end 
