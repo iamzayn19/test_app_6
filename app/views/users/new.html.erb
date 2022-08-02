@@ -1,9 +1,15 @@
 <div class="wrap-login100">
   <%= form_with model: @user, class: "login100-signup-form validate-form" do |f| %>
     
-    <% flash.each do |type,msg| %>
-      <div class="alert alert-danger alert-dismissible">
-        <%= msg %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+        <ul>
+          <% @user.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
       </div>
     <% end %>
 
@@ -12,20 +18,20 @@
       </span>
 
     <div class="wrap-input100 validate-input" data-validate="First name is required">
-      <input class="input100" type="text" name="first_name" placeholder="First Name">
+      <input class="input100" type="text" name="user[first_name]" placeholder="First Name">
     </div>
 
      <div class="wrap-input100 validate-input" data-validate="Password is required">
-      <input class="input100" type="text" name="last_name" placeholder="Last name">
+      <input class="input100" type="text" name="user[last_name]" placeholder="Last name">
      </div>
 
       <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-        <input class="input100" type="text" placeholder="Email" name="email">
+        <input class="input100" type="text" placeholder="Email" name="user[email]">
     
       </div>
     
      <div class="wrap-input100 validate-input" data-validate="Password is required">
-      <input class="input100" type="password" name="pass" placeholder="Password">
+      <input class="input100" type="password" name="user[password]" placeholder="Password">
      </div>
 
     <div class="flex-sb-m w-full p-t-3 p-b-32">
