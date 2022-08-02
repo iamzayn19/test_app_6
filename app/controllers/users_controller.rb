@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user, only: [:index]
+  before_action :authenticate_user, only: [:show]
   def index
+    redirect_to new_user_path
   end
   
   def new
@@ -15,7 +16,6 @@ class UsersController < ApplicationController
     else 
       render :new
     end 
-    
   end 
   
   def show
