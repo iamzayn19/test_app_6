@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find_by(id: session[:current_user]["id"])
+    @articles = Article.all
   end
 
   private
