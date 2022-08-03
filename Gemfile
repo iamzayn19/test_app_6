@@ -24,8 +24,6 @@ gem 'jbuilder', '~> 2.7'
 gem 'net-smtp', require: false
 gem 'net-imap', require: false
 gem 'net-pop', require: false
-gem 'bootstrap', '~> 5.2.0'
-gem 'jquery-rails'
 gem 'postmark-rails'
 
 # Use Active Storage variant
