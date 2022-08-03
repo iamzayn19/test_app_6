@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand m-l-15" href="#">BlogStore</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -30,9 +30,7 @@
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-       <%= link_to 'Logout', session_path(session[:current_user]["id"]), method: :delete %>
-       </button>
+       <%= link_to 'Logout', session_path(session[:current_user]["id"]), method: :delete, class: "btn btn-outline-danger my-2 my-sm-0 m-l-5 m-r-5"  %>
     </form>
   </div>
 </nav>
