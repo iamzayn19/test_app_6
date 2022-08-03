@@ -1,3 +1,7 @@
-Welcome <%= @user.first_name %>
 
-<%= link_to 'Logout', session_path(session[:current_user]["id"]), method: :delete %>
+
+<%# link_to 'Logout', session_path(session[:current_user]["id"]), method: :delete %>
+
+<%= render "navbar" %>
+
+Welcome <%= @user.first_name %>
